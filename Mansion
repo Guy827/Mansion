@@ -1,0 +1,49 @@
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui") -- Correct location for UI
+
+local player = game.Players.LocalPlayer
+local leaderstats = player:WaitForChild("leaderstats")
+local Money = leaderstats:WaitForChild("Money")
+
+local Type
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = playerGui -- ✅ Place UI in PlayerGui, NOT StarterGui
+ScreenGui.Name = "ShopGUI"
+
+local Shop = Instance.new("Frame")
+Shop.Parent = ScreenGui
+Shop.Name = "Shop"
+Shop.Size = UDim2.new(0, 135, 0, 176)
+Shop.Position = UDim2.new(0.122, 0, 0.166, 0)
+Shop.BackgroundColor3 = Color3.new(0, 0, 0)
+
+local TextButton = Instance.new("TextButton")
+TextButton.Text = "Execute"
+TextButton.Parent = Shop
+TextButton.Size = UDim2.new(0, 113, 0, 31)
+TextButton.Position = UDim2.new(0.105, 0, 0.6, 0)
+
+local TextBox = Instance.new("TextBox")
+TextBox.Text = "Put Number"
+TextBox.Parent = Shop
+TextBox.Size = UDim2.new(0, 113, 0, 31)
+TextBox.Position = UDim2.new(0.105, 0, 0.3, 0)
+
+TextButton.MouseButton1Click:Connect(function()
+	Type = tonumber(TextBox.Text)
+	print(Type)
+	
+	
+	Money.Value = Money.Value + Type
+end)
+
+local UiStroke = Instance.new("UIStroke")
+UiStroke.Parent = Shop
+UiStroke.Name = "UIStroke"
+UiStroke.Color = Color3.new(1, 1, 1)
+UiStroke.Thickness = 2
+
+local UiCorner = Instance.new("UICorner")
+UiCorner.Parent = Shop
+UiCorner.CornerRadius = UDim2.new(0, 20) -- ✅ UDim should have (0, 20)
