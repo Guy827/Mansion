@@ -8,7 +8,7 @@ local Money = leaderstats:WaitForChild("Money")
 local Type
 
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = playerGui -- ✅ Place UI in PlayerGui, NOT StarterGui
+ScreenGui.Parent = playerGui
 ScreenGui.Name = "ShopGUI"
 
 local Shop = Instance.new("Frame")
@@ -52,4 +52,4 @@ UiStroke.Thickness = 2
 
 local UiCorner = Instance.new("UICorner")
 UiCorner.Parent = Shop
-UiCorner.CornerRadius = UDim2.new(0, 20) -- ✅ UDim should have (0, 20)
+UiCorner.CornerRadius = UDim2.new(0, 20)
