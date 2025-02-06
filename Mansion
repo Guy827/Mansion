@@ -30,6 +30,12 @@ TextBox.Parent = Shop
 TextBox.Size = UDim2.new(0, 113, 0, 31)
 TextBox.Position = UDim2.new(0.105, 0, 0.3, 0)
 
+local TextBox2 = Instance.new("TextBox")
+TextBox2.Text = "Put Number"
+TextBox2.Parent = Shop
+TextBox2.Size = UDim2.new(0, 113, 0, 31)
+TextBox2.Position = UDim2.new(0.105, 0, 0.1, 0)
+
 TextButton.MouseButton1Click:Connect(function()
 	Type = tonumber(TextBox.Text)
 	print(Type)
